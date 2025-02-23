@@ -25,7 +25,7 @@ export default function TaskInput({ tasks, setTasks }) {
                     Add
                 </button>
             </form>
-            <TaskList tasks={tasks} setTasks={setTasks}/>
+            <TaskList tasks={tasks}/>
         </div>
     )
 }
