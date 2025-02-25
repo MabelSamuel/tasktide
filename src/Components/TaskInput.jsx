@@ -14,6 +14,7 @@ export default function TaskInput({ tasks, setTasks }) {
     return (
         <div>
             <form onSubmit={handleSubmit}>
+
                 <input 
                  type='text'
                  value={task}
@@ -24,6 +25,7 @@ export default function TaskInput({ tasks, setTasks }) {
                 <button type='submit'>
                     Add
                 </button>
+                
             </form>
             <TaskList tasks={tasks} setTasks={setTasks}/>
         </div>

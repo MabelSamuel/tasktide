@@ -1,7 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-export default function TaskItem({ item }) {
+export default function TaskItem({ item, index, onDelete }) {
+  function handleDelete () {
+    onDelete(index);
+  }
+
   return (
-    <div>TaskItem</div>
+    <div>
+      {item}
+      <button onClick={handleDelete}>
+        X
+      </button>
+    </div>
   )
 }
