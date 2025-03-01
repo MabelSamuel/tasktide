@@ -15,13 +15,11 @@ export default function TaskList({ initialTasks }) {
     handleDeleteTask(indexToComplete);
   }
 
-  const taskElements = tasks.map((item, index) => (
+  const taskElements = tasks.map((task) => (
     <TaskItem 
-      key={index} 
-      item={item} 
-      index={index}
+      key={task.id} 
+      task={task}       
       onDelete={handleDeleteTask}
-      onComplete={handleCompleteTask}
     />
   ));
 
