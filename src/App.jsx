@@ -4,12 +4,14 @@ import Header from './Components/Header';
 import TaskInput from './Components/TaskInput';
 
 function App() {
-  const [ tasks, setTasks ] = useState([]);
+  const [ initialTasks, setInitialTasks ] = useState([]);
 
   return (
     <div>
       <Header />
-      <TaskInput tasks={tasks} setTasks={setTasks} />
+      <TaskInput initialTasks={initialTasks} 
+        setInitialTasks={setInitialTasks} 
+      />
     </div>
   );
 }

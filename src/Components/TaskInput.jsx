@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 
 import TaskList from './TaskList';
 
-export default function TaskInput({ tasks, setTasks }) {
+export default function TaskInput({ initialTasks, setInitialTasks }) {
     const [ task, setTask ] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setTasks([...tasks, task]);
+        setInitialTasks([...initialTasks, task]);
         setTask('');
     }
 
@@ -27,7 +27,7 @@ export default function TaskInput({ tasks, setTasks }) {
                 </button>
                 
             </form>
-            <TaskList tasks={tasks} setTasks={setTasks}/>
+            <TaskList initialTasks={initialTasks} />
         </div>
     )
 }
