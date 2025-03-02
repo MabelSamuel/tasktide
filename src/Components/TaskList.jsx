@@ -5,8 +5,11 @@ export default function TaskList({ initialTasks }) {
   const [ tasks, setTasks ] = useState(initialTasks);
   const [ completedTasks, setCompletedTasks ] = useState([]);
 
-  function handleDeleteTask(indexToDelete) {
-    setTasks(tasks.filter((_, index) => index !== indexToDelete))
+  function handleDeleteTask(id) {
+    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
+    setCompletedTasks((prevCompleted) => 
+      prevCompleted.filter((task) => task.id !==id)
+    );
   }
 
   function handleCompleteTask(indexToComplete) {
@@ -15,7 +18,7 @@ export default function TaskList({ initialTasks }) {
     handleDeleteTask(indexToComplete);
   }
 
-  const taskElements = tasks.map((task) => (
+  const taskElements = initialTasks.map((task) => (
     <TaskItem 
       key={task.id} 
       task={task}       
