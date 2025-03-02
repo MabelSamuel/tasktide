@@ -1,18 +1,26 @@
 import React from 'react'
 
-export default function TaskItem({ item, index, onDelete, onComplete }) {
+export default function TaskItem({ 
+  task,  
+  onDelete, 
+  onToggleComplete
+}) {
 
   function handleDelete () {
-    onDelete(index);
+    onDelete(task.id);
   }
 
   function handleComplete() {
-    onComplete(index);
+    onToggleComplete(task.id);
   }
 
   return (
     <div>
-      {item}
+      <input 
+        type='checkbox'
+        onChange={handleComplete}
+      />
+      <span>{task.name}</span>
       <button onClick={handleDelete}>
         delete
       </button>

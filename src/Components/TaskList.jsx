@@ -6,23 +6,35 @@ export default function TaskList({ initialTasks }) {
   const [ completedTasks, setCompletedTasks ] = useState([]);
 
   function handleDeleteTask(id) {
-    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
-    setCompletedTasks((prevCompleted) => 
-      prevCompleted.filter((task) => task.id !==id)
-    );
+    const updatedTasks = tasks.filter(task => task.id !== id);
+    setTasks(updatedTasks);
   }
 
   function handleToggleComplete(id) {
-    const taskToToggle = tasks.find((task) => task.id === id) ||
-    completedTasks.find((task) => task.id === id);
-    
+    const updatedTasks = tasks.map(task => {
+      if (task.id === id) {
+        return { ...task, completed: !task.completed };
+      }
+      return task;
+    });
+    setTasks(updatedTasks);
+
+    const taskToToggle = tasks.find(task => task.id === id);
+    if (taskToToggle) {
+      if (!taskToToggle.completed) {
+        setCompletedTasks([...completedTasks, taskToToggle]);
+      } else {
+        setCompletedTasks(completedTasks.filter(task => task.id !==id));
+      }
+    }
   }
 
-  const taskElements = initialTasks.map((task) => (
+  const taskElements = tasks.map((task) => (
     <TaskItem 
       key={task.id} 
       task={task}       
       onDelete={handleDeleteTask}
+      onToggleComplete={handleToggleComplete}
     />
   ));
 
