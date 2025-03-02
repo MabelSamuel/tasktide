@@ -12,10 +12,10 @@ export default function TaskList({ initialTasks }) {
     );
   }
 
-  function handleCompleteTask(indexToComplete) {
-    const taskToComplete = tasks[indexToComplete]
-    setCompletedTasks([...completedTasks, taskToComplete])
-    handleDeleteTask(indexToComplete);
+  function handleToggleComplete(id) {
+    const taskToToggle = tasks.find((task) => task.id === id) ||
+    completedTasks.find((task) => task.id === id);
+    
   }
 
   const taskElements = initialTasks.map((task) => (
