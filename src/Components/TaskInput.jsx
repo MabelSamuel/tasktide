@@ -28,24 +28,33 @@ export default function TaskInput({ initialTasks, setInitialTasks }) {
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-
-                <input 
-                 type='text'
-                 value={task.name}
-                 onChange={handleChange}
-                 placeholder='Enter task'
-                />
-                
-                <button type='submit'>
-                    Add
-                </button>
-                
-            </form>
+        <>
             <TaskList initialTasks={initialTasks} 
                 setInitialTasks={setInitialTasks}
             />
-        </div>
+            <div className='min-h-screen flex flex-col justify-end items-center pb-8'>
+                <form onSubmit={handleSubmit}
+                    className="w-3/4 fixed bottom-8"
+                >
+                    <div className='flex justify-center'>
+                        <input 
+                            type='text'
+                            value={task.name}
+                            onChange={handleChange}
+                            placeholder='Enter task'
+                            className='w-full border border-gray-300 rounded-sm shadow-sm
+                            focus:outline-violet-200'
+                        />
+                        
+                        <button type='submit'
+                            className='ml-2 px-4 py-2 bg-violet-200 text-white rounded-sm
+                            hover:bg-violet-300 focus:outline-none focus:ring-2 focus:ring-violet-200'
+                        >
+                            Add
+                        </button> 
+                    </div>                               
+                </form>
+            </div>            
+        </>
     )
 }

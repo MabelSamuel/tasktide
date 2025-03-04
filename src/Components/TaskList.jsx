@@ -23,15 +23,6 @@ export default function TaskList({ initialTasks, setInitialTasks }) {
       return task;
     });
     setInitialTasks(updatedTasks);
-
-    // const taskToToggle = initialTasks.find(task => task.id === id);
-    // if (taskToToggle) {
-    //   if (!taskToToggle.completed) {
-    //     setCompletedTasks([...completedTasks, taskToToggle]);
-    //   } else {
-    //     setCompletedTasks(completedTasks.filter(task => task.id !==id));
-    //   }
-    // }
   }
 
   const taskElements = initialTasks.map((task) => (

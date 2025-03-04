@@ -7,7 +7,9 @@ function App() {
   const [ initialTasks, setInitialTasks ] = useState([]);
 
   return (
-    <div>
+    <div className="min-h-screen bg-cover bg-center bg-no-repeat bg-fixed"
+     style={{ backgroundImage:"url('/background.jpg')"}}
+    >
       <Header />
       <TaskInput initialTasks={initialTasks} 
         setInitialTasks={setInitialTasks} 
