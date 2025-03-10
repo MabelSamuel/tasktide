@@ -3,7 +3,7 @@ import TaskItem from './TaskItem'
 
 export default function TaskList({ initialTasks, setInitialTasks }) {
   console.log(initialTasks);
-  const [ completedTasks, setCompletedTasks ] = useState([]);
+  // const [ completedTasks, setCompletedTasks ] = useState([]);
 
   // Update local state
   useEffect(() => {
