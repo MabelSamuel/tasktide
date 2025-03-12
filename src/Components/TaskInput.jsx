@@ -41,14 +41,15 @@ export default function TaskInput({ initialTasks, setInitialTasks }) {
                             type='text'
                             value={task.name}
                             onChange={handleChange}
-                            placeholder='Enter task'
-                            className='w-full border border-gray-300 rounded-sm shadow-sm
-                            focus:outline-violet-200'
+                            placeholder=' Enter task'
+                            className='w-full border bg-black bg-opacity-50 text-white
+                            outline-green-700 
+                            rounded-sm shadow-sm focus:outline-none placeholder-gray-200'
                         />
                         
                         <button type='submit'
-                            className='ml-2 px-4 py-2 bg-violet-200 text-white rounded-sm
-                            hover:bg-violet-300 focus:outline-none focus:ring-2 focus:ring-violet-200'
+                            className='ml-2 px-4 py-2 bg-green-600 text-white rounded-sm 
+                            hover:bg-green-700 focus:ring-2 focus:ring-green-600'
                         >
                             Add
                         </button> 
