@@ -43,7 +43,6 @@ export default function TaskInput({ initialTasks, setInitialTasks }) {
                             onChange={handleChange}
                             placeholder=' Enter task'
                             className='w-full border bg-black bg-opacity-50 text-white
-                            outline-green-700 
                             rounded-sm shadow-sm focus:outline-none placeholder-gray-200'
                         />
                         
