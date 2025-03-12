@@ -15,16 +15,16 @@ export default function TaskItem({
   }
 
   return (
-    <div className='mt-5 p-4 bg-white rounded-sm shadow-md'>
+    <div className='mt-2 p-2 bg-green-300 rounded-sm shadow-sm w-3/4 mx-auto'>
       <div className='flex items-center justify-between'>
         <div className='flex items-center space-x-3'>
           <input 
             type='checkbox'
             checked={task.completed}
             onChange={handleComplete}
-            className='form-checkbox h-5 w-5 rounded-lg border-2'
+            className='form-checkbox h-5 w-5 rounded-md border-2'
           />
-          <span className={`text-gray-800 ${task.completed ? 'line-through text-gray-500' : ''}`}> 
+          <span className={`text-white ${task.completed ? 'line-through text-gray-500' : ''}`}> 
             {task.name} 
           </span>
         </div>
