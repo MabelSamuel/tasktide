@@ -29,14 +29,14 @@ export default function TaskItem({
               <MdCheckBoxOutlineBlank className='h-5 w-5'/>
             }
           </button>
-          
+
           <span className={`text-white ${task.completed ? 'line-through text-gray-500' : ''}`}> 
             {task.name} 
           </span>
         </div>
         <button 
           onClick={handleDelete}
-          className='p-2 text-red-500 hover:text-red-600 transition-colors rounded-sm'
+          className='p-2 text-white hover:text-red-400 transition-colors rounded-sm'
           aria-label="Delete task"
         >
           <IoTrash className="h-5 w-5"/>

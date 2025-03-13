@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import TaskItem from './TaskItem'
+import ComponentsList from './CompletedTasks';
 
 export default function TaskList({ initialTasks, setInitialTasks }) {
   console.log(initialTasks);
@@ -37,6 +38,7 @@ export default function TaskList({ initialTasks, setInitialTasks }) {
   return (
     <div>
         {taskElements}
+        <ComponentsList tasks={initialTasks}/>
     </div>
   )
 }

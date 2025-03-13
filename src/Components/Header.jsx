@@ -8,7 +8,7 @@ export default function Header() {
   })
   return (
     <div className='p-6 mb-5'>
-      <h1 className='text-4xl text-white'>Task Tide</h1>
+      <h1 className='text-4xl text-white font-semibold'>Task Tide</h1>
       <p className='text-white text-lg'>{today}</p>
     </div>
   )
