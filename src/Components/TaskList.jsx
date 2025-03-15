@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import TaskItem from './TaskItem'
 import ComponentsList from './CompletedTasks';
 
 export default function TaskList({ initialTasks, setInitialTasks }) {
   console.log(initialTasks);
-  // const [ completedTasks, setCompletedTasks ] = useState([]);
 
   // Update local state
   useEffect(() => {
@@ -38,7 +37,9 @@ export default function TaskList({ initialTasks, setInitialTasks }) {
   return (
     <div>
         {taskElements}
-        <ComponentsList tasks={initialTasks}/>
+        <ComponentsList tasks={initialTasks}
+          onToggleComplete={handleToggleComplete}
+        />
     </div>
   )
 }

@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { IoChevronDown, IoChevronForward } from 'react-icons/io5';
+import { MdCheckBox, MdCheckBoxOutlineBlank } from 'react-icons/md';
 
-export default function CompletedTasks({ tasks }) {
+export default function CompletedTasks({ tasks, onToggleComplete }) {
   const [ isOpen, setIsOpen ] = useState(false);
   // Filter only completed tasks
   const completedTasks = tasks?.filter(task => task.completed) || [];
@@ -31,6 +32,12 @@ export default function CompletedTasks({ tasks }) {
             <div className='space-y-2'>
               {completedTasks.map(task => (
                 <div key={task.id} className='p-2 bg-green-100 rounded-sm flex items-center'>
+                  <button
+                    onClick={() => onToggleComplete(task.id)}
+                    className='text-white focus:outline-none mr-3'
+                  >
+                    <MdCheckBox className='h-5 w-5 text-gray-500'/>
+                  </button>
                   <span className='text-gray-500 line-through'>{task.name}</span>
                 </div>
               ))}
