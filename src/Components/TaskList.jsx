@@ -16,6 +16,7 @@ export default function TaskList({ initialTasks, setInitialTasks }) {
   }
 
   function handleToggleComplete(id) {
+
     const updatedTasks = initialTasks.map(task => {
       if (task.id === id) {
         return { ...task, completed: !task.completed };
@@ -25,7 +26,9 @@ export default function TaskList({ initialTasks, setInitialTasks }) {
     setInitialTasks(updatedTasks);
   }
 
-  const taskElements = initialTasks.map((task) => (
+  const incompleteTasks = initialTasks.filter(task => !task.completed);
+
+  const taskElements = incompleteTasks.map((task) => (
     <TaskItem 
       key={task.id} 
       task={task}       

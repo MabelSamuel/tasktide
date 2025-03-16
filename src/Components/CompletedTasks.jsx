@@ -38,7 +38,7 @@ export default function CompletedTasks({ tasks, onToggleComplete }) {
           Completed Tasks <span className='px-2 py-1 text-sm'>
             {completedTasks.length}
           </span>
-        </h2>     
+        </h2>
       </div>
 
       <div 
