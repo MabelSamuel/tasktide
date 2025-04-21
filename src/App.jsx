@@ -7,7 +7,8 @@ function App() {
   const [ initialTasks, setInitialTasks ] = useState([]);
 
   return (
-    <div>
+    <div className="bg-gray-300"
+    >
       <Header />
       <TaskInput initialTasks={initialTasks} 
         setInitialTasks={setInitialTasks} 
